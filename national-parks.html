@@ -19,14 +19,41 @@
       <a href="national-parks.html">NATIONAL PARKS</a>
     </header>
     <main>
-        <input type="radio" name="search-by-location" id="search-by-location" onclick="">Search By Location
-        <input type="radio" name="search-by-type" id="search-by-type" onclick="">Search By Type
-        <br>
-        <br>
-        <h3>States/Territories</h3>
-        <select name="search" id="search-bar">
-            <option value="">Please Select...</option>
-        </select>
+      <input
+        type="radio"
+        name="search-by-location"
+        id="search-by-location"
+        onclick=""
+      />Search By Location
+      <input
+        type="radio"
+        name="search-by-type"
+        id="search-by-type"
+        onclick=""
+      />Search By Type
+      <br />
+      <br />
+      <h3>States/Territories</h3>
+      <select name="search" id="search-bar">
+        <option value="">Please Select...</option>
+      </select>
+      <table id="matching-data">
+        <thead>
+          <tr>
+            <h3>Search Results</h3>
+          </tr>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Website</th>
+          </tr>
+        </thead>
+        <tbody id="matching-data-tbl-body"></tbody>
+      </table>
     </main>
     <footer></footer>
     <script></script>
