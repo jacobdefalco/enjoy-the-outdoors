@@ -19,28 +19,31 @@
       <a href="national-parks.html">NATIONAL PARKS</a>
     </header>
     <main>
+      <h1>National Parks</h1>
       <input
         type="radio"
-        name="search-by-location"
+        name="search-by"
         id="search-by-location"
-        onclick=""
+        onchange="loadOptionsInDDL()"
+        value="location"
       />Search By Location
       <input
         type="radio"
-        name="search-by-type"
+        name="search-by"
         id="search-by-type"
-        onclick=""
+        onchange="loadOptionsInDDL()"
+        value="type"
       />Search By Type
       <br />
       <br />
       <h3>States/Territories</h3>
-      <select name="search" id="search-bar">
-        <option value="">Please Select...</option>
+      <select name="search" id="search-bar" onchange="filterAndDisplay()">
+        <option value="">Please Select A Search Type</option>
       </select>
-      <table id="matching-data">
+      <table id="matching-parks">
         <thead>
           <tr>
-            <h3>Search Results</h3>
+            <h4>Search Results</h4>
           </tr>
           <tr>
             <th>Name</th>
@@ -52,10 +55,13 @@
             <th>Website</th>
           </tr>
         </thead>
-        <tbody id="matching-data-tbl-body"></tbody>
+        <tbody id="matching-parks-tbl-body"></tbody>
       </table>
     </main>
     <footer></footer>
-    <script></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
