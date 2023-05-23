@@ -4,7 +4,7 @@ body {
     height: 100%;
 }
 
-.text-background-grey {
+.text-background {
     background-color: rgba(17, 17, 17, 0.644);
     border-radius: 10px;
     color: white;
