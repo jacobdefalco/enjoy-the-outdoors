@@ -67,12 +67,20 @@
         </nav>
       </div>
     </header>
-    <main></main>
+    <main>
+      <h1>Please Select A Mountain</h1>
+      <select name="" id="mountain-DDL" onchange="displayMountainData(value)">
+        <option value="">Please Select Mountain...</option>
+      </select>
+      <div id="results-div"></div>
+    </main>
     <footer></footer>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script src="scripts/mountainData.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>

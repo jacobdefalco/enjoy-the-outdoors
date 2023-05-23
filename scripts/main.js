@@ -1,6 +1,6 @@
 "use strict";
 
-const selection = document.querySelector("#search-bar");
+const selection = document.querySelector("#search-DDL");
 const matchingParksTblBody = document.querySelector("#matching-parks-tbl-body");
 let defaultOption = new Option("Please Select A Search Type");
 
@@ -101,4 +101,53 @@ function filterAndDisplay() {
   matchingParksTblBody.innerHTML = "";
   let filteredParks = findMatchingParks();
   displayMatchingParks(filteredParks);
+}
+
+//MOUNTAINS PAGE
+
+const mountainSearch = document.querySelector("#mountain-DDL");
+const resultsDiv = document.querySelector("#results-div");
+
+//filter through array creating new options with each index
+window.onload = function loadMountains() {
+  for (let i = 0; i < mountainsArray.length; i++) {
+    let mountainOption = document.createElement("option");
+    mountainOption.value = i;
+    mountainOption.textContent = mountainsArray[i].name;
+    mountainSearch.appendChild(mountainOption);
+  }
+};
+
+//display picture
+function displayMountainData(mountainValue) {
+  resultsDiv.innerHTML = "";
+  let mountainImageElement = document.createElement("img");
+  mountainImageElement.src = `images/${mountainsArray[mountainValue].img}`;
+  resultsDiv.appendChild(mountainImageElement);
+
+  let descriptionLabel = document.createElement("h2");
+  descriptionLabel.innerHTML = "Description:";
+  resultsDiv.appendChild(descriptionLabel);
+
+  let description = document.createElement("p");
+  description.innerHTML = `${mountainsArray[mountainValue].desc}`;
+  resultsDiv.appendChild(description);
+
+  let elevationLabel = document.createElement("h2");
+  elevationLabel.innerHTML = "Elevation:";
+  resultsDiv.appendChild(elevationLabel);
+
+  let elevation = document.createElement("p");
+  elevation.innerHTML = `The elevation of ${mountainsArray[mountainValue].name} is ${mountainsArray[mountainValue].elevation} feet.`;
+  resultsDiv.appendChild(elevation);
+
+  let climbingDifficultyLabel = document.createElement("h2");
+  climbingDifficultyLabel.innerHTML = "Climbing Difficulty:";
+  resultsDiv.appendChild(climbingDifficultyLabel);
+
+  let climbingDifficulty = document.createElement("p");
+  climbingDifficulty.innerHTML = `The climbing difficulty  of ${
+    mountainsArray[mountainValue].name
+  } is ${mountainsArray[mountainValue].effort.toLowerCase()}`;
+  resultsDiv.appendChild(climbingDifficulty);
 }
