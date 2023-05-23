@@ -16,6 +16,12 @@ function loadOptionsInDDL() {
       let locationOptions = new Option(location);
       selection.appendChild(locationOptions);
     });
+  }
+  if (searchByRadio.value == "type") {
+    parkTypesArray.forEach((parkType) => {
+      let parkTypeOptions = new Option(parkType);
+      selection.appendChild(parkTypeOptions);
+    });
   } else {
     selection.appendChild(defaultOption);
   }
