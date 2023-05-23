@@ -75,7 +75,19 @@ function buildParkRow(tbody, park) {
 
 //searching array for matching parks
 function findMatchingParks() {
-  return nationalParksArray.filter((p) => p.State == selection.value);
+  const searchByRadio = document.querySelector(
+    "input[name='search-by']:checked"
+  );
+  switch (searchByRadio.value) {
+    case "location":
+      return nationalParksArray.filter((p) => p.State == selection.value);
+    case "type":
+      return nationalParksArray.filter((p) =>
+        p.LocationName.includes(selection.value)
+      );
+    default:
+      return [];
+  }
 }
 
 function displayMatchingParks(matchingParks) {
