@@ -129,7 +129,7 @@ function displayMountainData(mountainValue) {
   mountainImageElement.src = `images/${mountainsArray[mountainValue].img}`;
   resultsDiv.appendChild(mountainImageElement);
 
-  let descriptionLabel = document.createElement("h2");
+  let descriptionLabel = document.createElement("h3");
   descriptionLabel.innerHTML = "Description:";
   resultsDiv.appendChild(descriptionLabel);
 
@@ -137,7 +137,7 @@ function displayMountainData(mountainValue) {
   description.innerHTML = `${mountainsArray[mountainValue].desc}`;
   resultsDiv.appendChild(description);
 
-  let elevationLabel = document.createElement("h2");
+  let elevationLabel = document.createElement("h3");
   elevationLabel.innerHTML = "Elevation:";
   resultsDiv.appendChild(elevationLabel);
 
@@ -145,7 +145,7 @@ function displayMountainData(mountainValue) {
   elevation.innerHTML = `The elevation of ${mountainsArray[mountainValue].name} is ${mountainsArray[mountainValue].elevation} feet.`;
   resultsDiv.appendChild(elevation);
 
-  let climbingDifficultyLabel = document.createElement("h2");
+  let climbingDifficultyLabel = document.createElement("h3");
   climbingDifficultyLabel.innerHTML = "Climbing Difficulty:";
   resultsDiv.appendChild(climbingDifficultyLabel);
 
