@@ -1,5 +1,5 @@
 "use strict";
-
+//National Park Search Page
 const selection = document.querySelector("#search-DDL");
 const matchingParksTblBody = document.querySelector("#matching-parks-tbl-body");
 let defaultOption = new Option("Please Select A Search Type");
