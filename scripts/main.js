@@ -3,6 +3,7 @@
 const selection = document.querySelector("#search-DDL");
 const matchingParksTblBody = document.querySelector("#matching-parks-tbl-body");
 let defaultOption = new Option("Please Select A Search Type");
+const tableCaption = document.querySelector("#table-caption");
 
 function loadOptionsInDDL() {
   matchingParksTblBody.innerHTML = "";
@@ -95,6 +96,7 @@ function displayMatchingParks(matchingParks) {
   for (let i = 0; i < matchingParks.length; i++) {
     buildParkRow(matchingParksTblBody, matchingParks[i]);
   }
+  tableCaption.innerText = `Displaying ${matchingParks.length} of ${nationalParksArray.length} Results`;
 }
 
 function filterAndDisplay() {
@@ -118,10 +120,12 @@ window.onload = function loadMountains() {
   }
 };
 
-//display picture
+//display mountain data and picture
 function displayMountainData(mountainValue) {
   resultsDiv.innerHTML = "";
   let mountainImageElement = document.createElement("img");
+  mountainImageElement.style.width = "50%";
+  mountainImageElement.style.height = "50%";
   mountainImageElement.src = `images/${mountainsArray[mountainValue].img}`;
   resultsDiv.appendChild(mountainImageElement);
 
