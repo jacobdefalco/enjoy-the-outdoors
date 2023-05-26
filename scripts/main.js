@@ -4,6 +4,7 @@ const selection = document.querySelector("#search-DDL");
 const matchingParksTblBody = document.querySelector("#matching-parks-tbl-body");
 let defaultOption = new Option("Please Select A Search Type");
 const tableCaption = document.querySelector("#table-caption");
+const searchResultsH4 = document.querySelector("#search-results-h4")
 
 function loadOptionsInDDL() {
   matchingParksTblBody.innerHTML = "";
@@ -97,6 +98,7 @@ function displayMatchingParks(matchingParks) {
     buildParkRow(matchingParksTblBody, matchingParks[i]);
   }
   tableCaption.innerText = `Displaying ${matchingParks.length} of ${nationalParksArray.length} Results`;
+  searchResultsH4.innerText = "Search Results"
 }
 
 function filterAndDisplay() {
