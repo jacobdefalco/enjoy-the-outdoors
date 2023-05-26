@@ -119,6 +119,11 @@ window.onload = function loadMountains() {
     mountainSearch.appendChild(mountainOption);
   }
 };
+//function to convert feet to meters
+function convertFeetToMeters(elevation) {
+  let elevationInMeters = +elevation * 0.304;
+  return elevationInMeters.toFixed(2);
+}
 
 //display mountain data and picture
 function displayMountainData(mountainValue) {
@@ -142,7 +147,11 @@ function displayMountainData(mountainValue) {
   resultsDiv.appendChild(elevationLabel);
 
   let elevation = document.createElement("p");
-  elevation.innerHTML = `The elevation of ${mountainsArray[mountainValue].name} is ${mountainsArray[mountainValue].elevation} feet.`;
+  elevation.innerHTML = `The elevation of ${
+    mountainsArray[mountainValue].name
+  } is ${mountainsArray[mountainValue].elevation} ft. (${convertFeetToMeters(
+    mountainsArray[mountainValue].elevation
+  )} m).`;
   resultsDiv.appendChild(elevation);
 
   let climbingDifficultyLabel = document.createElement("h3");
